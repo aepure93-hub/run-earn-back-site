@@ -2,21 +2,34 @@ const body = document.body;
 const header = document.querySelector('[data-header]');
 const toggle = document.querySelector('[data-nav-toggle]');
 const nav = document.querySelector('[data-nav]');
+let navScrollY = 0;
 
 const closeNav = () => {
+  if (!body.classList.contains('nav-open')) return;
   body.classList.remove('nav-open');
+  body.style.removeProperty('--nav-scroll-offset');
   toggle?.setAttribute('aria-expanded', 'false');
   toggle?.setAttribute('aria-label', 'Open navigation');
+  window.scrollTo(0, navScrollY);
 };
 
 toggle?.addEventListener('click', () => {
   const open = !body.classList.contains('nav-open');
-  body.classList.toggle('nav-open', open);
+  if (open) {
+    navScrollY = window.scrollY;
+    body.style.setProperty('--nav-scroll-offset', `-${navScrollY}px`);
+    body.classList.add('nav-open');
+  } else {
+    closeNav();
+  }
   toggle.setAttribute('aria-expanded', String(open));
   toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
 });
 
 nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNav));
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeNav();
+});
 
 const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 18);
 window.addEventListener('scroll', updateHeader, { passive: true });
