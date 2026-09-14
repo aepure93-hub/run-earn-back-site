@@ -1,0 +1,24 @@
+{
+  "name": "EarnBack",
+  "short_name": "EarnBack",
+  "description": "EarnBack macht Bewegung zum Schlüssel für dein iPhone. Wähle eine Challenge, blockiere Ablenkungen, erreiche dein Distanzziel und erhalte den Zugriff zurück.",
+  "lang": "de",
+  "id": "/de/",
+  "start_url": "/de/",
+  "scope": "/de/",
+  "display": "standalone",
+  "background_color": "#f6f8f5",
+  "theme_color": "#071d25",
+  "icons": [
+    {
+      "src": "../assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

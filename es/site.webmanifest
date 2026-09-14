@@ -1,0 +1,24 @@
+{
+  "name": "EarnBack",
+  "short_name": "EarnBack",
+  "description": "EarnBack convierte el movimiento en la llave de tu iPhone. Elige un reto, bloquea distracciones, completa la distancia y recupera el acceso.",
+  "lang": "es",
+  "id": "/es/",
+  "start_url": "/es/",
+  "scope": "/es/",
+  "display": "standalone",
+  "background_color": "#f6f8f5",
+  "theme_color": "#071d25",
+  "icons": [
+    {
+      "src": "../assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
