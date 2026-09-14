@@ -49,5 +49,8 @@ document.querySelector('[data-notify]')?.addEventListener('click', () => {
 
 document.querySelector('[data-language]')?.addEventListener('change', (event) => {
   const path = event.target.value;
-  if (path && /^\/(?:|it\/|de\/|es\/|fr\/)$/u.test(path)) window.location.assign(path);
+  if (path && /^\/(?:|it\/|de\/|es\/|fr\/)$/u.test(path)) {
+    const previewBase = window.location.hostname.endsWith('.github.io') ? '/run-earn-back-site' : '';
+    window.location.assign(`${previewBase}${path}`);
+  }
 });
